@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 const skillCategories = [
   {
     title: "Artificial Intelligence & Core CS",
-    skills: ["Machine Learning", "Artificial Intelligence", "Operating Systems", "DBMS", "Computer Networks", "Computer Architecture","scikit-learn (sklearn)"],
+    skills: ["Machine Learning", "Artificial Intelligence", "Operating Systems", "DBMS", "Computer Networks", "Computer Architecture","Scikit-Learn (sklearn)"],
     accentColor: "primary",
   },
   {

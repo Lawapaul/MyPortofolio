@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import mascotImage from "@/assets/mascot.png";
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient blobs */}
@@ -11,9 +10,9 @@ const Hero = () => {
       <div className="gradient-blob w-[300px] h-[300px] bg-primary/20 top-1/2 left-1/4 animate-float" />
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="space-y-8">
+        <div className="flex justify-center">
+          {/* Content */}
+          <div className="space-y-8 max-w-3xl text-center">
             {/* Background text */}
             <motion.div initial={{
             opacity: 0
@@ -34,7 +33,7 @@ const Hero = () => {
             y: 0
           }} transition={{
             duration: 0.6
-          }} className="space-y-4">
+          }} className="space-y-4 flex justify-center">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium text-secondary-foreground">
                 <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
                 Open to opportunities
@@ -79,7 +78,7 @@ const Hero = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.3
-          }} className="flex flex-wrap gap-4">
+          }} className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="group" asChild>
                 <Link to="/projects">
                   View Projects
@@ -94,66 +93,6 @@ const Hero = () => {
               </Button>
             </motion.div>
           </div>
-
-          {/* Right visual - Mascot */}
-          <motion.div initial={{
-          opacity: 0,
-          scale: 0.9
-        }} animate={{
-          opacity: 1,
-          scale: 1
-        }} transition={{
-          duration: 0.8,
-          delay: 0.4
-        }} className="relative hidden lg:flex justify-center items-center">
-            <div className="relative">
-              {/* Glow effect behind mascot */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-cyber-teal/20 to-neon-green/30 blur-3xl rounded-full scale-75" />
-              
-              {/* Mascot image */}
-              <motion.img alt="AI Developer Mascot" animate={{
-              y: [0, -10, 0]
-            }} transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }} src="/lovable-uploads/235f1e9c-f93d-415f-a0b0-6287992d8935.png" className="relative z-0 w-full max-w-md drop-shadow-2xl" />
-              
-              {/* Floating tech badges */}
-              <motion.div className="absolute top-0 right-0 glass-card px-3 py-2 rounded-lg" animate={{
-              y: [0, -8, 0]
-            }} transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5
-            }}>
-                <span className="font-mono text-xs text-neon-green">Machine Learning</span>
-              </motion.div>
-              
-              <motion.div className="absolute bottom-1/4 -left-4 glass-card px-3 py-2 rounded-lg" animate={{
-              y: [0, -8, 0]
-            }} transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}>
-                <span className="font-mono text-xs text-primary">Full-Stack</span>
-              </motion.div>
-              
-              <motion.div className="absolute bottom-10 right-0 glass-card px-3 py-2 rounded-lg" animate={{
-              y: [0, -8, 0]
-            }} transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1.5
-            }}>
-                <span className="font-mono text-xs text-cyber-teal">Deep Learning</span>
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
 
         {/* Scroll indicator */}
