@@ -10,9 +10,9 @@ const Hero = () => {
       <div className="gradient-blob w-[300px] h-[300px] bg-primary/20 top-1/2 left-1/4 animate-float" />
 
       <div className="container relative z-10">
-        <div className="flex justify-center">
+        <div className="flex">
           {/* Content */}
-          <div className="space-y-8 max-w-3xl text-center">
+          <div className="space-y-8 max-w-3xl">
             {/* Background text */}
             <motion.div initial={{
             opacity: 0
@@ -33,11 +33,26 @@ const Hero = () => {
             y: 0
           }} transition={{
             duration: 0.6
-          }} className="space-y-4 flex justify-center">
+          }} className="space-y-4">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium text-secondary-foreground">
                 <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse" />
                 Open to opportunities
               </span>
+            </motion.div>
+
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.6,
+            delay: 0.05
+          }} className="space-y-2">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground">
+                Harshit Singh Shekhawat
+              </h2>
             </motion.div>
 
             <motion.h1 initial={{
@@ -78,7 +93,7 @@ const Hero = () => {
           }} transition={{
             duration: 0.6,
             delay: 0.3
-          }} className="flex flex-wrap gap-4 justify-center">
+          }} className="flex flex-wrap gap-4">
               <Button size="lg" className="group" asChild>
                 <Link to="/projects">
                   View Projects
