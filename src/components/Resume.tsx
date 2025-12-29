@@ -46,7 +46,7 @@ const Resume = () => {
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="/Users/harshitsingh/Documents/Resume/Harshit Singh Shekhawat_Updated.pdfs" target="_blank" rel="noopener noreferrer">
+                <a href="https://drive.google.com/file/d/1Old0kwTJO8apVmfwUNJ9Fg6cVYihQ-2U/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                   View Online
                 </a>
               </Button>
