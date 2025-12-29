@@ -40,7 +40,7 @@ const Resume = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" className="group" asChild>
-                <a href="/resume.pdf" download>
+                <a href="/resume.pdf" download="resume.pdf">
                   <Download className="mr-2 h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
                   Download Resume
                 </a>
