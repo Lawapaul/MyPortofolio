@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#coding-profiles", label: "Profiles" },
-  { href: "#projects", label: "Projects" },
-  { href: "#roadmap", label: "Roadmap" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/skills", label: "Skills" },
+  { href: "/profiles", label: "Profiles" },
+  { href: "/projects", label: "Projects" },
+  { href: "/roadmap", label: "Roadmap" },
+  { href: "/contact", label: "Contact" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,10 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   return (
     <>
@@ -35,23 +41,27 @@ const Navbar = () => {
         }`}
       >
         <nav className="container flex items-center justify-between h-16 md:h-20">
-          <a href="#" className="font-heading font-bold text-xl gradient-text-orange">
+          <Link to="/" className="font-heading font-bold text-xl gradient-text-orange">
             HSS
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium"
+                to={link.href}
+                className={`text-sm transition-colors font-medium ${
+                  location.pathname === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button size="sm" asChild>
-              <a href="#resume">Resume</a>
+              <Link to="/resume">Resume</Link>
             </Button>
           </div>
 
@@ -80,17 +90,21 @@ const Navbar = () => {
           >
             <nav className="container flex flex-col gap-4 py-8">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.div
                   key={link.href}
-                  href={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-heading font-bold text-foreground py-2"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    to={link.href}
+                    className={`text-2xl font-heading font-bold py-2 block ${
+                      location.pathname === link.href ? "text-primary" : "text-foreground"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -98,9 +112,7 @@ const Navbar = () => {
                 transition={{ delay: navLinks.length * 0.05 }}
               >
                 <Button size="lg" className="mt-4 w-full" asChild>
-                  <a href="#resume" onClick={() => setIsMobileMenuOpen(false)}>
-                    Download Resume
-                  </a>
+                  <Link to="/resume">Download Resume</Link>
                 </Button>
               </motion.div>
             </nav>
