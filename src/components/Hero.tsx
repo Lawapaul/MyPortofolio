@@ -117,7 +117,7 @@ const Hero = () => {
               duration: 4,
               repeat: Infinity,
               ease: "easeInOut"
-            }} src="/lovable-uploads/235f1e9c-f93d-415f-a0b0-6287992d8935.png" className="relative z-8 w-full max-w-md drop-shadow-2xl" />
+            }} src="/lovable-uploads/235f1e9c-f93d-415f-a0b0-6287992d8935.png" className="relative z-0 w-full max-w-md drop-shadow-2xl" />
               
               {/* Floating tech badges */}
               <motion.div className="absolute top-0 right-0 glass-card px-3 py-2 rounded-lg" animate={{
