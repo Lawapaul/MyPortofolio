@@ -4,12 +4,12 @@ import { Check } from "lucide-react";
 const skillCategories = [
   {
     title: "Artificial Intelligence & Core CS",
-    skills: ["Machine Learning", "Artificial Intelligence", "Operating Systems", "DBMS", "Computer Networks", "Computer Architecture"],
+    skills: ["Machine Learning", "Artificial Intelligence", "Operating Systems", "DBMS", "Computer Networks", "Computer Architecture","scikit-learn (sklearn)"],
     accentColor: "primary",
   },
   {
     title: "Programming Languages",
-    skills: ["Python", "C / C++", "Java", "JavaScript", "SQL", "MATLAB", "Shell & Assembly"],
+    skills: ["Python", "C / C++", "Java", "JavaScript", "SQL", "MATLAB", "Shell & Assembly","R Studio"],
     accentColor: "cyber-teal",
   },
   {
@@ -19,7 +19,7 @@ const skillCategories = [
   },
   {
     title: "Databases & Tools",
-    skills: ["MySQL", "MongoDB", "Docker", "Git", "Linux / macOS / Windows"],
+    skills: ["MySQL", "MongoDB", "Docker", "Git", "Linux / macOS / Windows","StarUML"],
     accentColor: "destructive",
   },
 ];

@@ -4,32 +4,37 @@ import { BookOpen, Brain, Code, Cpu, Rocket } from "lucide-react";
 const milestones = [
   {
     icon: BookOpen,
-    title: "CS Foundations",
-    description: "DSA, OS, DBMS, CN",
-    status: "completed",
-  },
-  {
-    icon: Brain,
-    title: "Machine Learning & AI",
-    description: "ML algorithms, Neural Networks, Deep Learning",
+    title: "Engineering & Programming Foundations",
+    description:
+      "Calculus, Differential Equations, Physics, Chemistry, Python, C/C++, EEE, DSD, Communication Skills",
     status: "completed",
   },
   {
     icon: Code,
-    title: "Full-Stack Engineering",
-    description: "Frontend, Backend, Databases, APIs",
+    title: "Core Computer Science & Development",
+    description:
+      "DSA, OS, CN, TOC, Discrete Math, Graph Theory, Microprocessors, Web Programming, MERN Stack, AI Basics",
+    status: "completed",
+  },
+  {
+    icon: Brain,
+    title: "AI & Algorithmic Thinking",
+    description:
+      "Machine Learning, Probability, Design & Analysis of Algorithms, Software Engineering",
     status: "completed",
   },
   {
     icon: Cpu,
-    title: "System-Level Thinking",
-    description: "Architecture, Scalability, Performance",
+    title: "Systems, Embedded & Cloud Computing",
+    description:
+      "Embedded Systems, AWS Cloud Systems, Scalable Architectures, Performance Optimization",
     status: "in-progress",
   },
   {
     icon: Rocket,
     title: "Industry-Ready AI Engineer",
-    description: "Production ML, MLOps, Enterprise Solutions",
+    description:
+      "Production ML, MLOps, End-to-End AI Systems, Enterprise-Scale Solutions",
     status: "upcoming",
   },
 ];

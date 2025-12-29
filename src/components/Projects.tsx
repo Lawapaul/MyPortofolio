@@ -10,8 +10,8 @@ const projects = [
       "A full-stack, real-time expense sharing platform with multi-user cost splitting, secure authentication, analytics dashboards, and automated debt reconciliation.",
     techStack: ["Node.js", "Express.js", "MySQL", "EJS", "Bootstrap", "Nodemailer"],
     hosting: "Hosted on Render",
-    github: "https://github.com/Lawapaul/chippin",
-    demo: "#",
+    github: "https://github.com/Lawapaul/Chippin-ExpenseTracker2.0",
+    demo: "https://chippin-expensetracker2-0.onrender.com/auth",
     accent: "primary",
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     description:
       "An intelligent sonar-based obstacle detection and spatial mapping system using Arduino and ultrasonic sensors, streaming radar-style real-time data to a live dashboard.",
     techStack: ["Arduino", "Ultrasonic Sensors", "Processing 3"],
-    github: "https://github.com/Lawapaul/netra",
+    github: "https://github.com/Lawapaul/Netra---Sonar-Mapping-System",
     accent: "cyber-teal",
   },
   {
@@ -29,7 +29,8 @@ const projects = [
     description:
       "A full-stack platform for listing and exploring boutique heritage stays with session-based authentication, image hosting, and geolocation.",
     techStack: ["Node.js", "Express.js", "MongoDB", "Passport.js", "Cloudinary", "Mapbox"],
-    github: "https://github.com/Lawapaul/padharoogo",
+    github: "https://github.com/Lawapaul/PadharooGo-Full-stack-end-to-end-platform-for-travel-stays",
+    demo: "https://padharoogo-full-stack-end-to-end.onrender.com/listings",
     accent: "neon-green",
   },
 ];

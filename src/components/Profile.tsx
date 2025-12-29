@@ -4,7 +4,7 @@ import { Brain, Code, Users, Cpu } from "lucide-react";
 const highlights = [
   { icon: Brain, label: "AI & ML Specialization" },
   { icon: Code, label: "Strong DSA & Core CS" },
-  { icon: Cpu, label: "Full-Stack + AI Engineer" },
+  { icon: Cpu, label: "MERN Stack Developer" },
   { icon: Users, label: "Leadership & Team Management" },
 ];
 
