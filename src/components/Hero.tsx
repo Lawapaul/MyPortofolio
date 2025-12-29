@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import mascotImage from "@/assets/mascot.png";
 
 const Hero = () => {
   return (
@@ -64,54 +66,64 @@ const Hero = () => {
               className="flex flex-wrap gap-4"
             >
               <Button size="lg" className="group" asChild>
-                <a href="#projects">
+                <Link to="/projects">
                   View Projects
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="group" asChild>
-                <a href="#resume">
+                <Link to="/resume">
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume
-                </a>
+                </Link>
               </Button>
             </motion.div>
           </div>
 
-          {/* Right visual */}
+          {/* Right visual - Mascot */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:flex justify-center items-center"
           >
-            <div className="relative w-full aspect-square max-w-lg mx-auto">
-              {/* Abstract AI visualization */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 via-destructive/10 to-cyber-teal/20 animate-pulse-glow" />
-              <div className="absolute inset-8 rounded-full bg-gradient-to-tl from-cyber-teal/30 via-transparent to-primary/30 animate-float" />
-              <div className="absolute inset-16 rounded-full glass-card flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <div className="font-mono text-4xl font-bold gradient-text">AI</div>
-                  <div className="font-mono text-xs text-muted-foreground tracking-widest">POWERED</div>
-                </div>
-              </div>
+            <div className="relative">
+              {/* Glow effect behind mascot */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-cyber-teal/20 to-neon-green/30 blur-3xl rounded-full scale-75" />
               
-              {/* Orbiting elements */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="w-16 h-16 rounded-full glass-card flex items-center justify-center animate-float">
-                  <span className="font-mono text-xs text-neon-green">ML</span>
-                </div>
-              </div>
-              <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4">
-                <div className="w-20 h-20 rounded-full glass-card flex items-center justify-center animate-float animation-delay-200">
-                  <span className="font-mono text-xs text-primary">DL</span>
-                </div>
-              </div>
-              <div className="absolute top-1/4 left-0 -translate-x-1/2">
-                <div className="w-14 h-14 rounded-full glass-card flex items-center justify-center animate-float animation-delay-400">
-                  <span className="font-mono text-xs text-cyber-teal">NLP</span>
-                </div>
-              </div>
+              {/* Mascot image */}
+              <motion.img
+                src={mascotImage}
+                alt="AI Developer Mascot"
+                className="relative z-10 w-full max-w-md drop-shadow-2xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              
+              {/* Floating tech badges */}
+              <motion.div
+                className="absolute top-0 right-0 glass-card px-3 py-2 rounded-lg"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              >
+                <span className="font-mono text-xs text-neon-green">Machine Learning</span>
+              </motion.div>
+              
+              <motion.div
+                className="absolute bottom-1/4 -left-4 glass-card px-3 py-2 rounded-lg"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <span className="font-mono text-xs text-primary">Full-Stack</span>
+              </motion.div>
+              
+              <motion.div
+                className="absolute bottom-10 right-0 glass-card px-3 py-2 rounded-lg"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              >
+                <span className="font-mono text-xs text-cyber-teal">Deep Learning</span>
+              </motion.div>
             </div>
           </motion.div>
         </div>

@@ -1,17 +1,15 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
 import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const AboutPage = () => {
   return (
-    <main className="relative overflow-hidden">
+    <main className="relative overflow-hidden pt-20">
       <Navbar />
-      <Hero />
       <Profile />
       <Footer />
     </main>
   );
 };
 
-export default Index;
+export default AboutPage;
