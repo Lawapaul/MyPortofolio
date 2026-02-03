@@ -39,7 +39,7 @@ const Profile = () => {
             <p className="text-lg text-secondary-foreground leading-relaxed">
               I'm a 3rd-year Computer Science student specializing in{" "}
               <span className="text-foreground font-medium">Artificial Intelligence & Machine Learning</span> at VIT 
-              with a CGPA of <span className="text-neon-green font-mono font-semibold">8.90</span>.
+              with a CGPA of <span className="text-neon-green font-mono font-semibold">8.95</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               I focus on building production-ready platforms, intelligent systems, and scalable 
