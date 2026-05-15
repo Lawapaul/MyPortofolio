@@ -37,7 +37,7 @@ const Profile = () => {
             className="space-y-6"
           >
             <p className="text-lg text-secondary-foreground leading-relaxed">
-              I'm a 3rd-year Computer Science student specializing in{" "}
+              I'm a pre-final year Computer Science student specializing in{" "}
               <span className="text-foreground font-medium">Artificial Intelligence & Machine Learning</span> at VIT 
               with a CGPA of <span className="text-neon-green font-mono font-semibold">8.95</span>.
             </p>
