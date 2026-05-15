@@ -3,24 +3,54 @@ import { Check } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Artificial Intelligence & Core CS",
-    skills: ["Machine Learning", "Artificial Intelligence", "Operating Systems", "DBMS", "Computer Networks", "Computer Architecture","Scikit-Learn (sklearn)"],
+    title: "Artificial Intelligence & Machine Learning",
+    skills: [
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Deep Learning",
+      "Scikit-Learn (sklearn)",
+      "TensorFlow",
+      "PyTorch",
+      "Natural Language Processing (NLP)",
+      "Computer Vision",
+    ],
     accentColor: "primary",
   },
   {
     title: "Programming Languages",
-    skills: ["Python", "C / C++", "Java", "JavaScript", "SQL", "MATLAB", "Shell & Assembly","R Studio"],
+    skills: [
+      "Python",
+      "C",
+      "C++",
+      "Java",
+      "JavaScript",
+      "SQL",
+      "MATLAB",
+      "Shell Scripting",
+      "Assembly Language",
+      "R",
+    ],
     accentColor: "cyber-teal",
   },
   {
-    title: "Web & Backend",
+    title: "Web Development & Backend",
     skills: ["Node.js", "Express.js", "React.js", "REST APIs", "Socket.IO", "EJS"],
     accentColor: "neon-green",
   },
   {
-    title: "Databases & Tools",
-    skills: ["MySQL", "MongoDB", "Docker", "Git", "Linux / macOS / Windows","StarUML"],
+    title: "Databases & Developer Tools",
+    skills: ["MySQL", "MongoDB", "Docker", "Git", "Cisco Packet Tracer", "Linux", "macOS", "Windows", "StarUML"],
     accentColor: "destructive",
+  },
+  {
+    title: "Core Computer Science",
+    skills: ["Operating Systems", "DBMS", "Computer Networks", "Computer Architecture", "Compiler Design (Lex & Yacc)"],
+    accentColor: "primary",
+  },
+  {
+    title: "Embedded Systems & Electronics",
+    skills: ["Arduino Programming", "8051 Microcontroller Programming", "LTspice", "Keil uVision", "ModelSim"],
+    accentColor: "cyber-teal",
   },
 ];
 
