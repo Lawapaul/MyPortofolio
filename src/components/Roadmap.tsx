@@ -1,41 +1,34 @@
 import { motion } from "framer-motion";
-import { BookOpen, Brain, Code, Cpu, Rocket } from "lucide-react";
+import { BookOpen, Brain, Code, Rocket } from "lucide-react";
 
 const milestones = [
   {
     icon: BookOpen,
     title: "Engineering & Programming Foundations",
     description:
-      "Calculus, Differential Equations, Physics, Chemistry, Python, C/C++, EEE, DSD, Communication Skills",
+      "Python Programming • C/C++ & OOP • Digital System Design • Electrical Engineering • Engineering Physics • Engineering Chemistry • Calculus • Differential Equations • Technical Report Writing • Communication & Soft Skills",
     status: "completed",
   },
   {
     icon: Code,
-    title: "Core Computer Science & Development",
+    title: "Core Computer Science & System Foundations",
     description:
-      "DSA, OS, CN, TOC, Discrete Math, Graph Theory, Microprocessors, Web Programming, MERN Stack, AI Basics",
+      "Data Structures & Algorithms • Computer Networks • Theory of Computation • Java Programming • Microprocessors & Microcontrollers • Discrete Mathematics & Graph Theory • Web Programming • Operating Systems • Database Management Systems • Computer Architecture & Organization • Artificial Intelligence • Complex Variables & Linear Algebra",
     status: "completed",
   },
   {
     icon: Brain,
-    title: "AI & Algorithmic Thinking",
+    title: "AI, Cloud & Advanced Computing",
     description:
-      "Machine Learning, Probability, Design & Analysis of Algorithms, Software Engineering",
-    status: "completed",
-  },
-  {
-    icon: Cpu,
-    title: "Systems, Embedded & Cloud Computing",
-    description:
-      "Embedded Systems, AWS Cloud Systems, Scalable Architectures, Performance Optimization",
-    status: "in-progress",
+      "Machine Learning • Deep Learning • Software Engineering • Compiler Design • Cryptography & Network Security • Machine Vision • Speech & Language Processing • Embedded Systems • AWS Cloud Computing • Probability & Statistics • Design & Analysis of Algorithms • Advanced Competitive Coding",
+    status: "current",
   },
   {
     icon: Rocket,
     title: "Industry-Ready AI Engineer",
     description:
-      "Production ML, MLOps, End-to-End AI Systems, Enterprise-Scale Solutions",
-    status: "upcoming",
+      "Production ML Systems • MLOps • Scalable AI Architectures • Enterprise AI Solutions • Real-Time Intelligent Applications • End-to-End AI Pipelines • Cloud-Native AI Deployment",
+    status: "in-progress",
   },
 ];
 
@@ -66,6 +59,7 @@ const Roadmap = () => {
             <div className="space-y-8">
               {milestones.map((milestone, index) => {
                 const isCompleted = milestone.status === "completed";
+                const isCurrent = milestone.status === "current";
                 const isInProgress = milestone.status === "in-progress";
 
                 return (
@@ -82,7 +76,7 @@ const Roadmap = () => {
                       className={`absolute left-4 md:left-6 top-2 w-4 h-4 md:w-5 md:h-5 rounded-full border-2 transition-all ${
                         isCompleted
                           ? "bg-neon-green border-neon-green shadow-lg shadow-neon-green/30"
-                          : isInProgress
+                          : isCurrent || isInProgress
                           ? "bg-primary border-primary shadow-lg shadow-primary/30 animate-pulse"
                           : "bg-background border-muted-foreground"
                       }`}
@@ -90,7 +84,7 @@ const Roadmap = () => {
 
                     <div
                       className={`glass-card-hover p-6 ${
-                        isInProgress ? "border-primary/30" : ""
+                        isCurrent || isInProgress ? "border-primary/30" : ""
                       }`}
                     >
                       <div className="flex items-start gap-4">
@@ -98,7 +92,7 @@ const Roadmap = () => {
                           className={`w-12 h-12 rounded-lg flex items-center justify-center shrink-0 ${
                             isCompleted
                               ? "bg-neon-green/10"
-                              : isInProgress
+                              : isCurrent || isInProgress
                               ? "bg-primary/10"
                               : "bg-muted"
                           }`}
@@ -107,7 +101,7 @@ const Roadmap = () => {
                             className={`w-6 h-6 ${
                               isCompleted
                                 ? "text-neon-green"
-                                : isInProgress
+                                : isCurrent || isInProgress
                                 ? "text-primary"
                                 : "text-muted-foreground"
                             }`}
@@ -116,9 +110,19 @@ const Roadmap = () => {
                         <div>
                           <div className="flex items-center gap-3 mb-1">
                             <h3 className="font-heading text-lg font-bold">{milestone.title}</h3>
-                            {isInProgress && (
-                              <span className="px-2 py-0.5 rounded-full text-xs font-mono bg-primary/10 text-primary">
-                                Current
+                            {(isCompleted || isCurrent || isInProgress) && (
+                              <span
+                                className={`px-2 py-0.5 rounded-full text-xs font-mono ${
+                                  isCompleted
+                                    ? "bg-neon-green/10 text-neon-green"
+                                    : "bg-primary/10 text-primary"
+                                }`}
+                              >
+                                {isCompleted
+                                  ? "Completed"
+                                  : isCurrent
+                                  ? "Current"
+                                  : "In Progress"}
                               </span>
                             )}
                           </div>
