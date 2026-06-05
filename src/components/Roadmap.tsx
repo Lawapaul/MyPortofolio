@@ -21,7 +21,7 @@ const milestones = [
     title: "AI, Cloud & Advanced Computing",
     description:
       "Machine Learning • Deep Learning • Software Engineering • Compiler Design • Cryptography & Network Security • Machine Vision • Speech & Language Processing • Embedded Systems • AWS Cloud Computing • Probability & Statistics • Design & Analysis of Algorithms • Advanced Competitive Coding",
-    status: "current",
+    status: "completed",
   },
   {
     icon: Rocket,

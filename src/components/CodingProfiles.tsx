@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, ExternalLink } from "lucide-react";
+import { Github, Linkedin, ExternalLink, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const CodingProfiles = () => {
@@ -58,8 +58,38 @@ const CodingProfiles = () => {
             </div>
           </motion.div>
 
-          {/* GitHub & LinkedIn Cards */}
+          {/* Profile link cards */}
           <div className="space-y-6">
+            <motion.a
+              href="https://www.geeksforgeeks.org/profile/surfe6mip"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="glass-card-hover p-6 group block"
+            >
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-lg bg-neon-green/10 flex items-center justify-center group-hover:bg-neon-green/20 transition-colors">
+                  <Code2 className="w-7 h-7 text-neon-green" />
+                </div>
+                <div>
+                  <h3 className="font-heading text-lg font-bold group-hover:text-primary transition-colors">
+                    GeeksforGeeks
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-mono">@surfe6mip</p>
+                </div>
+                <ExternalLink className="w-5 h-5 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <div className="rounded-lg bg-background/50 p-4 border border-border/40">
+                <p className="font-heading text-3xl font-bold text-neon-green">91</p>
+                <p className="text-xs uppercase tracking-widest font-mono text-muted-foreground">
+                  Solved Questions
+                </p>
+              </div>
+            </motion.a>
+
             <motion.a
               href="https://github.com/Lawapaul"
               target="_blank"
@@ -67,7 +97,7 @@ const CodingProfiles = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="glass-card-hover p-6 flex items-center gap-4 group block"
             >
               <div className="w-14 h-14 rounded-lg bg-foreground/10 flex items-center justify-center group-hover:bg-foreground/20 transition-colors">
@@ -87,7 +117,7 @@ const CodingProfiles = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="glass-card-hover p-6 flex items-center gap-4 group block"
             >
               <div className="w-14 h-14 rounded-lg bg-[#0077B5]/10 flex items-center justify-center group-hover:bg-[#0077B5]/20 transition-colors">
