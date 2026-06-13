@@ -1,8 +1,46 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, ExternalLink, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const GFG_FALLBACK_SOLVED = 118;
+
 const CodingProfiles = () => {
+  const [gfgSolved, setGfgSolved] = useState<number>(GFG_FALLBACK_SOLVED);
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    const loadGfgStats = async () => {
+      try {
+        const response = await fetch("/.netlify/functions/gfg-stats", {
+          signal: controller.signal,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Unable to load GFG stats");
+        }
+
+        const data = (await response.json()) as { totalProblemsSolved?: number };
+
+        if (typeof data.totalProblemsSolved === "number") {
+          setGfgSolved(data.totalProblemsSolved);
+        }
+      } catch (error) {
+        if (!controller.signal.aborted) {
+          console.warn("Using fallback GeeksforGeeks stats", error);
+        }
+      }
+    };
+
+    loadGfgStats();
+
+    return () => controller.abort();
+  }, []);
+
   return (
     <section id="coding-profiles" className="section-container bg-background-secondary">
       <div className="gradient-blob w-[400px] h-[400px] bg-neon-green/20 top-1/2 -right-20 animate-pulse-glow" />
@@ -83,7 +121,7 @@ const CodingProfiles = () => {
                 <ExternalLink className="w-5 h-5 text-muted-foreground ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div className="rounded-lg bg-background/50 p-4 border border-border/40">
-                <p className="font-heading text-3xl font-bold text-neon-green">91</p>
+                <p className="font-heading text-3xl font-bold text-neon-green">{gfgSolved}</p>
                 <p className="text-xs uppercase tracking-widest font-mono text-muted-foreground">
                   Solved Questions
                 </p>
