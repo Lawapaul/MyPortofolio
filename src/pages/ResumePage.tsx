@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import { usePageTitle } from "@/hooks/use-page-title";
 
 const ResumePage = () => {
-  usePageTitle({ 
+  usePageTitle({
     title: "Resume | Harshit Singh Shekhawat",
-    favicon: "📄"
+    favicon: "/favicon.svg",
   });
 
   return (
