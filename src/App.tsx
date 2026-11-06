@@ -31,7 +31,7 @@ const PortfolioExperience: React.FC = () => {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setIntroReady(true), 3000);
+    const timer = window.setTimeout(() => setIntroReady(true), 250);
     return () => window.clearTimeout(timer);
   }, []);
 

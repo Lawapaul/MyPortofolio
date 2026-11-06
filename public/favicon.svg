@@ -1,17 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
   <defs>
-    <linearGradient id="accent" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F29A4A" />
-      <stop offset="1" stop-color="#E86A33" />
+    <linearGradient id="brandRingGrad" x1="10" y1="10" x2="150" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F29A4A" />
+      <stop offset="100%" stop-color="#E86A33" />
     </linearGradient>
-    <linearGradient id="sheen" x1="12" y1="4" x2="52" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fff" stop-opacity=".16" />
-      <stop offset="1" stop-color="#fff" stop-opacity="0" />
+    <linearGradient id="innerPlateGlow" x1="80" y1="36" x2="80" y2="124" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E86A33" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#E86A33" stop-opacity="0.03" />
     </linearGradient>
+    <path id="hssNameCircle" d="M 80,140 A 60,60 0 1,1 79.9,140" fill="none" />
   </defs>
-  <rect x="2" y="2" width="60" height="60" rx="18" fill="#101116" />
-  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="17.25" stroke="url(#accent)" stroke-opacity=".8" stroke-width="1.5" />
-  <path d="M20 3h24c9.4 0 17 7.6 17 17v4C47 15 34 8 20 3Z" fill="url(#sheen)" />
-  <text x="32" y="40" fill="#F5F3F0" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="-1.7" text-anchor="middle">HSS</text>
-  <circle cx="50" cy="49" r="3" fill="url(#accent)" />
+
+  <!-- Outer Round Emblem Body -->
+  <circle cx="80" cy="80" r="77" fill="#0D0E13" stroke="url(#brandRingGrad)" stroke-width="2.5" />
+  <circle cx="80" cy="80" r="72" fill="none" stroke="#E86A33" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="2 3" />
+
+  <!-- Inner Monogram Core -->
+  <circle cx="80" cy="80" r="43" fill="#14151B" stroke="url(#brandRingGrad)" stroke-width="1.8" />
+  <circle cx="80" cy="80" r="43" fill="url(#innerPlateGlow)" />
+
+  <!-- Full Name in Circular Path -->
+  <text fill="#F5F3F0" font-family="-apple-system, BlinkMacSystemFont, 'DM Sans', sans-serif" font-size="8.8" font-weight="800" letter-spacing="3.2">
+    <textPath href="#hssNameCircle" startOffset="50%" text-anchor="middle">
+      HARSHIT SINGH SHEKHAWAT
+    </textPath>
+  </text>
+
+  <!-- Bottom Accent Pips (No stars) -->
+  <circle cx="71" cy="138" r="1.6" fill="#F29A4A" />
+  <circle cx="80" cy="140" r="2.4" fill="#E86A33" />
+  <circle cx="89" cy="138" r="1.6" fill="#F29A4A" />
+
+  <!-- Center Initials HSS -->
+  <text
+    x="80"
+    y="88.5"
+    fill="#F5F3F0"
+    font-family="-apple-system, BlinkMacSystemFont, 'DM Sans', sans-serif"
+    font-size="26"
+    font-weight="900"
+    letter-spacing="-0.6"
+    text-anchor="middle"
+  >
+    HSS
+  </text>
 </svg>
