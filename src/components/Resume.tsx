@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Download, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { RESUME_CONFIG } from "@/data/portfolioData";
 
 const Resume = () => {
   return (
@@ -40,13 +41,13 @@ const Resume = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" className="group" asChild>
-                <a href="/resume.pdf" download="resume.pdf">
+                <a href={RESUME_CONFIG.filePath} download={RESUME_CONFIG.downloadFileName}>
                   <Download className="mr-2 h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
                   Download Resume
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="https://drive.google.com/file/d/1z9I6HZEZiRfazRxjuFpIMNLUTOAOa1CJ/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                <a href={RESUME_CONFIG.viewUrl} target="_blank" rel="noopener noreferrer">
                   View Online
                 </a>
               </Button>

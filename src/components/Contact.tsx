@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
+import { CONTACT_DATA } from "@/data/portfolioData";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,14 +16,9 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // EmailJS configuration
-  const PUBLIC_KEY = "VZpZaVf5dhrWsw9P3";
-  const SERVICE_ID = "service_0klzzup";
-  const TEMPLATE_ID = "template_mbet98i";
-
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init(PUBLIC_KEY);
+    emailjs.init(CONTACT_DATA.emailJsConfig.publicKey);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,12 +27,18 @@ const Contact = () => {
 
     try {
       const templateParams = {
+        to_email: CONTACT_DATA.recipientEmail,
+        reply_to: formData.email,
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
       };
 
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
+      await emailjs.send(
+        CONTACT_DATA.emailJsConfig.serviceId,
+        CONTACT_DATA.emailJsConfig.templateId,
+        templateParams
+      );
 
       toast.success("Message sent! I'll get back to you soon.");
       setFormData({ name: "", email: "", message: "" });

@@ -32,7 +32,7 @@ export const projectItems: ProjectItem[] = [
   },
   {
     category: "Computer Vision",
-    title: "Smart Parking System",
+    title: "ParkVision – Parking Guidance & Number Plate Recognition System",
     subtitle: "AI-Powered Parking Guidance and ANPR Platform",
     description:
       "Real-time parking operations platform that tracks occupancy, recognizes plates, and recommends the best available slot through a live dashboard.",

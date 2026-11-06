@@ -1,5 +1,9 @@
 # Welcome to your Lovable project
 
+## Ask About Harshit
+
+The portfolio includes a server-rendered OpenRouter chat assistant. See [the chatbot setup guide](docs/chatbot-setup.md) for free-model constraints, local development, Netlify configuration, and privacy/security notes.
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
