@@ -251,8 +251,8 @@ class PositiveSoothingSongEngine {
   private masterGain: GainNode | null = null;
   private delayNode: DelayNode | null = null;
 
-  // ON by default unless explicitly paused by the user in this session
-  private isPlayingState = true;
+  // Start only after the visitor activates the intro screen.
+  private isPlayingState = false;
   private stepTimer: number | null = null;
   private stepIndex = 0;
   private listeners = new Set<(playing: boolean) => void>();
@@ -260,17 +260,6 @@ class PositiveSoothingSongEngine {
 
   constructor() {
     if (typeof window !== "undefined") {
-      try {
-        const saved = sessionStorage.getItem(MUSIC_PREF_KEY);
-        if (saved === "paused") {
-          this.isPlayingState = false;
-        } else {
-          this.isPlayingState = true;
-        }
-      } catch {
-        this.isPlayingState = true;
-      }
-
       const startWhenAvailable = () => {
         if (this.isPlayingState && document.visibilityState !== "hidden") {
           void this.startAudioEngine();
@@ -710,6 +699,15 @@ class PositiveSoothingSongEngine {
 }
 
 const musicEngine = new PositiveSoothingSongEngine();
+
+export const startBackgroundMusic = async (): Promise<void> => {
+  try {
+    sessionStorage.setItem(MUSIC_PREF_KEY, "playing");
+  } catch {
+    // Audio can still start when storage is unavailable.
+  }
+  await musicEngine.play();
+};
 
 function useBackgroundMusic() {
   const [isPlaying, setIsPlaying] = useState<boolean>(musicEngine.isPlaying());
